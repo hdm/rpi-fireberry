@@ -45,12 +45,6 @@ func fireToggle() int {
 func setFireOn() {
 	gpioLock.Lock()
 	defer gpioLock.Unlock()
-
-	pin.Output()
-	pin.Low()
-	time.Sleep(time.Millisecond * 250)
-	pin.High()
-	time.Sleep(time.Millisecond * 250)
 	pin.High()
 	log.Printf("toggled fire to ON")
 	fireState = STATUS_FIRE_ON
@@ -59,12 +53,6 @@ func setFireOn() {
 func setFireOff() {
 	gpioLock.Lock()
 	defer gpioLock.Unlock()
-
-	pin.Output()
-	pin.Low()
-	time.Sleep(time.Millisecond * 250)
-	pin.High()
-	time.Sleep(time.Millisecond * 250)
 	pin.Low()
 	log.Printf("toggled fire to OFF")
 	fireState = STATUS_FIRE_OFF
@@ -85,7 +73,6 @@ func main() {
 	}
 
 	pin = gpio.NewPin(4)
-
 	pin.Output()
 
 	mux := http.NewServeMux()
