@@ -1,0 +1,10 @@
+[Unit]
+Description=fireberry
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/local/bin/fireberry
+
+[Install]
+WantedBy=multi-user.target
