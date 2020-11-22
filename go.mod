@@ -1,4 +1,4 @@
-module github.com/hdm/fireberry
+module github.com/hdm/rpi-fireberry
 
 go 1.12
 
