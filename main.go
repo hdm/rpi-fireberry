@@ -73,6 +73,7 @@ func main() {
 	}
 
 	pin = gpio.NewPin(4)
+	pin.Low()
 	pin.Output()
 
 	mux := http.NewServeMux()
